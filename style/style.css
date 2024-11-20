@@ -1,16 +1,21 @@
 body,
 html {
   height: 100%;
+  min-width:550px ;
 }
 body {
   margin: 5%;
   font-family: "Roboto", sans-serif;
+  background-image: url("/data/bg_img.jpg");
+  background-attachment: fixed;
+  
 }
 .title{
   text-align: center;
-  color: black;
+  color: white;
   font-size: 2em;
   margin-top: 2%;
+  
 }
 .container {
   display: grid;
@@ -30,11 +35,12 @@ body {
   display: flex;
   justify-content: space-evenly;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(2.5px);
+ 
   -webkit-backdrop-filter: blur(2.5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   transition: transform 0.3s ease;
+  
 }
 
 .navbar a {
@@ -77,7 +83,7 @@ body {
   height: 254px;
   border-radius: 5px 50px;
   background: linear-gradient(145deg, #cacaca, #f0f0f0);
-  box-shadow: 32px 32px 64px #a6a6a6, -32px -32px 64px #ffffff;
+  /*box-shadow: 32px 32px 64px #a6a6a6, -32px -32px 64px #ffffff;*/
 }
 .card .card-border-top {
   width: 60%;
