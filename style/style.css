@@ -6,7 +6,7 @@ html {
 body {
   margin: 5%;
   font-family: "Roboto", sans-serif;
-  background-image: url("/data/bg_img.JPG");
+  background-image: url("data/bg_img.JPG");
   background-attachment: fixed;
   
 }
