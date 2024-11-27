@@ -61,7 +61,7 @@
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-  background-color: #bbb;
+  background-color: white;
   color: black;
   font-family: Cursive;
   border-radius: 32px;
@@ -79,7 +79,7 @@
 }
 .flip-card-back-content {
   display: grid;
-  grid-template-rows: 4 1;
+  grid-template-rows: 4 1 1;
   justify-content: center;
   padding-top: 15%;
  
