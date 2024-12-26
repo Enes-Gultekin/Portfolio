@@ -6,7 +6,7 @@ html {
 body {
   margin: 5%;
   font-family: "Roboto", sans-serif;
-  background-image: url("/data/bg_img.jpg");
+  background-image: url("../data/bg_img.jpg");
   background-attachment: fixed;
   
 }
@@ -52,7 +52,7 @@ body {
 .navbar a:hover {
   color: white;
   font: athelas;
-  text-decoration: none;
+  text-decor  ation: none;
   transform: scale(1.2);
   transition: 0.2s;
   
@@ -68,27 +68,40 @@ body {
   width: 30%;
   height: 100%;
   
+  
 }
 
 .main {
   grid-area: main;
   background-color: #333;
   border-radius: 30px;
+  backdrop-filter: blur(2px) saturate(200%);
+  -webkit-backdrop-filter: blur(2px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  min-height: fit-content;
+ 
 }
 
 .card {
+  color:white;
   margin-left: 5px;
   font: Gadugi;
   width: 190px;
-  height: 254px;
-  border-radius: 5px 50px;
-  background: linear-gradient(145deg, #cacaca, #f0f0f0);
-  /*box-shadow: 32px 32px 64px #a6a6a6, -32px -32px 64px #ffffff;*/
+  height: 250px;
+  border-radius: 5px ;
+  backdrop-filter: blur(2px) saturate(200%);
+  -webkit-backdrop-filter: blur(2px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+ 
 }
-.card .card-border-top {
+.card-border-top {
   width: 60%;
-  height: 3%;
-  background: #6b64f3;
+  height: 15px;
+  background: #38598b;
   margin: auto;
   border-radius: 0px 0px 15px 15px;
 }
@@ -104,7 +117,7 @@ body {
 
 .card .job {
   font-weight: 400;
-  color: black;
+  color: white;
   display: block;
   text-align: center;
   padding-top: 3px;
@@ -127,21 +140,64 @@ body {
 
 .card img {
   width: 100%;
+  border-radius: 10px;
 }
 .links_bio {
   max-width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  color: wheat;
+  
 }
-.links_bio i {
+.bi {
   transition: 0.2s;
 }
-.links_bio i:hover {
-  background: wheat;
-  transform: scale(1.6);
+.bi:hover {
+  transform: scale(1.4);
+  
   opacity: 1;
 }
+.card .bi {
+  font-size: 2em;
+  font-style: oblique;
+ 
+  color: white;
 
-.wave {
+}
+
+
+@media only screen and (max-width: 600px) {
+  
+  .
+}
+@media only screen and (max-width: 600px) {
+  body {
+    background-image: none;
+    justify-content: center;
+  
+ 
+  }
+  body,
+html {
+  height: 100%;
+  max-width:350px ;
+}
+  .main{
+    max-width: 350px;
+    margin: 0;
+    
+  }
+  .container{
+    margin: 0;
+    padding: 0;
+    display: ruby;
+  }
+  .navbar {
+    max-width: 350px;
+  }
+  .flip-card{
+    min-width: 20px;
+  }
+  .card{
+    display: none;
+  }
 }
