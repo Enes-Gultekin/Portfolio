@@ -8,6 +8,7 @@ body {
   font-family: "Roboto", sans-serif;
   background-image: url("../data/bg_img.jpg");
   background-attachment: fixed;
+  background-size: cover;
   
 }
 .title{
@@ -171,7 +172,7 @@ body {
 }
 @media only screen and (max-width: 600px) {
   body {
-    background-image: none;
+    
     justify-content: center;
   
  

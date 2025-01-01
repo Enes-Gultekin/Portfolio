@@ -68,7 +68,7 @@
 }
 
 .flip-card-front {
-  background-image: linear-gradient(to bottom, #0b0a05, #341600, #6b0011, #97005c, #6326d6);
+  
   color: white;
   transform: rotateY(180deg);
   max-height: 100%;
@@ -100,7 +100,7 @@
 }
 
 .flip-card2 .flip-card-back {
-  background-color: #6b0011;
+  
 }
 
 .flip-card2 img {
