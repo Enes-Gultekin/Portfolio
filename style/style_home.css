@@ -1,0 +1,42 @@
+.main{
+
+    padding-inline: 11%;
+  padding-block: 2%;
+}
+
+.main p{
+    
+        font-family: "anybody";
+        font-size: 25px;
+        letter-spacing: 0px;
+        word-spacing: 0.4px;
+        color: white;
+
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+        
+}
+.links_main{
+    display: flex;
+    justify-content: center;
+    
+    gap: 1%;
+    display: flex;
+ 
+}
+.links_main a{
+    display: block;
+    margin-inline: 1%;
+}
+.thanks{
+    display: flex;
+    justify-content: center;
+    font-family: "anybody";
+    gap: 1%;
+    display: flex;
+    font-size: 35px;
+    letter-spacing: 0px;
+    word-spacing: 0.4px;
+    color: white;
+}
