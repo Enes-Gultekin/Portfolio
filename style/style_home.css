@@ -40,3 +40,8 @@
     word-spacing: 0.4px;
     color: white;
 }
+@media screen and (max-width: 650px) {
+    .slideshow-container{
+        display: none;
+    }
+}
