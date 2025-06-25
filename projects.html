@@ -19,16 +19,25 @@
   <body>
     <div class="header">
       <h1>Geo-Portfolio</h1>
-        <h4>Enes Gültekin</h4>
+      <h4>Enes Gültekin</h4>
     </div>
     <div class="navbar">
       <a href="index.html">Home</a>
       <a href="#" class="active">Projects</a>
       <a href="about.html">Resume</a>
     </div>
+    <div id="filter">
+      <input type="checkbox" checked id="filter_gis">
+      <label for="filter_gis">GIS</label>
+      <input type="checkbox" checked id="filter_remote">
+      <label for="filter_remote"> Remote Sensing</label>
+      <input type="checkbox" checked id="show_all">
+      <label for="show_all">All</label>
+    </div>
 
     <div class="container">
-      <div class="card card_con"><div class="card_img"><img
+
+      <div class="card card_con gis rs"><div class="card_img"><img
             src="data/geoviz.png" alt><div
             class="card_text"><h1>Geovisualization Website</h1><p>The project is
               created in order to visualise geodata using
@@ -41,7 +50,7 @@
             <a
               href="https://github.com/Enes-Gultekin/GeoVisualization"
               target="_blank">GitHub</a></div></div></div>
-      <div class="card card_con"><div class="card_img"><img
+      <div class="card card_con gis"><div class="card_img"><img
             src="data/pegel_plugin.png" alt><div
             class="card_text"><h1>Pegel QGIS Plugin</h1><p>I created this plugin
               to monitor real-time water level across
@@ -50,7 +59,7 @@
               water-bodies.</p><a
               href="https://github.com/Enes-Gultekin/pegel_plugin"
               target="_blank">GitHub</a></div></div></div>
-      <div class="card card_con"><div class="card_img"><img
+      <div class="card card_con gis"><div class="card_img"><img
             src="data/eq_monitoring.png" alt><div
             class="card_text"><h1>Earhquake Monitoring Project</h1><p>This
               project is created to monitor real-time earthquakes. It
@@ -62,9 +71,10 @@
             <a
               href="https://github.com/Enes-Gultekin/EarthQuake__monitoring_Project"
               target="_blank" aria-label="GGWp">GitHub</a></div></div></div>
-      <div class="card card_con" style="display:none"><div class="card_img"><img
+      <div class="card card_con gis" style="display:none"><div
+          class="card_img"><img
             src="data/constituencies.png" alt><div
-            class="card_text" ><h1>Elections in Germany</h1><p>This project
+            class="card_text"><h1>Elections in Germany</h1><p>This project
               showcases my ability to analyze and visualize complex data by
               creating a detailed map of the 2021 German federal election
               results using ArcGIS Pro. I utilized Python for data cleaning and
@@ -76,7 +86,7 @@
               href="https://github.com/Enes-Gultekin/Visualization-of-Elections-in-Germany-in-2021/"
               target="_blank">GitHub</a>
           </div></div></div>
-      <div class="card card_con"><div class="card_img"><img
+      <div class="card card_con rs"><div class="card_img"><img
             src="data/rusle.jpg" alt><div
             class="card_text"><h1>Erosion Analysis in West Kenya: A RUSLE-Based
               Study</h1><p>This project utilizes the Revised Universal Soil Loss
@@ -88,8 +98,29 @@
               sustainable land management and erosion control strategies,
               helping to mitigate soil degradation and promote environmental
               conservation.</p><a
-                href="https://storymaps.arcgis.com/stories/a5f12c45dcb843cbaeaaba49c35c140a"
-                target="_blank">Website</a> </div></div></div>
+              href="https://storymaps.arcgis.com/stories/a5f12c45dcb843cbaeaaba49c35c140a"
+              target="_blank">Website</a> </div></div></div>
+      <div class="card card_con rs"><div class="card_img"><img
+            src="data/study_Area4.jpg" alt><div
+            class="card_text"><h1>Forest Change Monitoring in Western and
+              Central Kenya (2001-2021)</h1><p>
+              This project showcases advanced remote sensing abilities through
+              the comprehensive monitoring of forest change in Western and
+              Central Kenya from 2001 to 2021. Utilizing Landsat satellite data,
+              the study employs the FORCE framework for processing, including
+              data cubing, cloud and shadow detection, and radiometric
+              correction to generate Analysis Ready Data (ARD) and Highly
+              Analysis-Ready Data (hARD). A supervised machine learning
+              approach, specifically a Random Forest classifier, was trained
+              with multi-temporal spectral metrics and validated with an 84%
+              overall accuracy to classify land cover changes, identifying
+              patterns of forest gain, loss, and stability. The project
+              demonstrates proficiency in satellite image processing, machine
+              learning for land cover classification, time-series analysis, and
+              geospatial data visualization to provide critical insights for
+              forest conservation and management.</p><a
+              href="https://storymaps.arcgis.com/stories/a5f12c45dcb843cbaeaaba49c35c140a"
+              target="_blank">Website</a> </div></div></div>
     </div>
 
     <!-- wave container -->
@@ -100,5 +131,38 @@
         fill-opacity="0.65"
         d="M0,160L80,170.7C160,181,320,203,480,224C640,245,800,267,960,261.3C1120,256,1280,224,1360,208L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
     </svg>
+
+    <script>
+  const filter_gis = document.getElementById("filter_gis");
+  const filter_remote = document.getElementById("filter_remote");
+  const show_all = document.getElementById("show_all");
+  const cards = document.querySelectorAll(".card_con");
+
+  function updateCards() {
+    if (show_all.checked) {
+      cards.forEach(card => card.style.display = "block");
+      return;
+    }
+    cards.forEach(card => {
+      const isGis = filter_gis.checked && card.classList.contains("gis");
+      const isRemote = filter_remote.checked && card.classList.contains("rs");
+      // Show card if it matches any checked filter
+      card.style.display = (isGis || isRemote) ? "block" : "none";
+    });
+  }
+
+  filter_gis.addEventListener("change", () => {
+    show_all.checked = false;
+    updateCards();
+  });
+  filter_remote.addEventListener("change", () => {
+    show_all.checked = false;
+    updateCards();
+  });
+  show_all.addEventListener("change", updateCards);
+
+  // Initial state
+  updateCards();
+</script>
   </body>
 </html>

@@ -84,8 +84,30 @@
   color: white;
   margin: 5%;
 }
+#filter{
+  margin-top: 5%;
+  margin-left: 12%;
 
-
+}
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"] + label {
+  background: #f1f1f1;
+  border-radius: 20px;
+  padding: 10px 20px;
+  display: inline-block;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+input[type="checkbox"] + label:hover {
+  background: blue;
+}
+input[type="checkbox"]:checked + label {
+  background: blue;
+  color: #fff;
+}
 @media screen and (max-width: 650px) {
     
     .container {
